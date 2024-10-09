@@ -18,7 +18,22 @@ const app = new Elysia()
       credentials: true,
     })
   )
-  .group("/api", (app) => app.use(contentsRouter).use(usersRouter))
+  .group("/api", (app) =>
+    app
+      .use(contentsRouter)
+      .use(usersRouter)
+      .use(
+        new Elysia({ prefix: "/", analytic: true }).get(
+          "/",
+          ({ request, response }) =>
+            console.log(
+              `${new Date().toISOString()} : ${request.url} : ${
+                request.method
+              } ${request.url}`
+            )
+        )
+      )
+  )
   .listen(process.env.BACK_PORT || 3030);
 
 console.log(
