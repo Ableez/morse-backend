@@ -22,6 +22,23 @@ export const contentsRouter = new Elysia({ prefix: "/contents" })
       }),
     }
   )
+  .get(
+    "/get-user-nfts/:userId",
+    async ({ params }) => {
+      return await db.query.contents.findMany({
+        where: eq(contents.creatorId, params.userId),
+        with: {
+          accesses: true,
+          creator: true,
+        },
+      });
+    },
+    {
+      params: t.Object({
+        userId: t.String(),
+      }),
+    }
+  )
   .post(
     "/",
     async ({ body }) => {
