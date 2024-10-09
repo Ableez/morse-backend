@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS "weirdgee_contents" (
 	"creator_id" varchar(255) NOT NULL,
 	"title" varchar(256) NOT NULL,
 	"description" text,
-	"price" varchar NOT NULL,
+	"priceUSD" varchar NOT NULL,
+	"priceETH" varchar NOT NULL,
 	"token_id" varchar NOT NULL,
 	"creator_address" varchar,
 	"cover_image" varchar(256)

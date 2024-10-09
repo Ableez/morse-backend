@@ -1,5 +1,5 @@
 {
-  "id": "5167831c-da28-47b3-b76b-32cf2e805566",
+  "id": "62103f26-ed31-4aa5-9d6c-bc96072404a1",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -173,8 +173,14 @@
           "primaryKey": false,
           "notNull": false
         },
-        "price": {
-          "name": "price",
+        "priceUSD": {
+          "name": "priceUSD",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "priceETH": {
+          "name": "priceETH",
           "type": "varchar",
           "primaryKey": false,
           "notNull": true
