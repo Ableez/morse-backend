@@ -25,12 +25,13 @@ const app = new Elysia()
       .use(
         new Elysia({ prefix: "/", analytic: true }).get(
           "/",
-          ({ request, response }) =>
+          ({ request, response }) => {
             console.log(
               `${new Date().toISOString()} : ${request.url} : ${
                 request.method
               } ${request.url}`
-            )
+            );
+          }
         )
       )
   )
