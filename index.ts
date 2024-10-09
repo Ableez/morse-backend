@@ -8,7 +8,11 @@ const app = new Elysia()
   .use(swagger())
   .use(
     cors({
-      origin: ["http://localhost:3000", "https://morse-web3.vercel.app"],
+      origin: [
+        "http://localhost:3000",
+        "https://morse-web3.vercel.app",
+        "https://morse-backend.vercel.app",
+      ],
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       allowedHeaders: ["Content-Type", "Authorization"],
       credentials: true,
